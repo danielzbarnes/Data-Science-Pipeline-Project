@@ -60,21 +60,23 @@ This project builds a machine learning pipeline to predict whether a customer wo
 
 Raw Data is first preprocessed by the Feature Engineering function to create `combined_text` and `review_length` features. Data is then passed to the ColumnTransformer which preprocess the data by type: numberical features, categorical features and text. it is then passed to the Logistic Regression model to fit and make predictions.
 
-Raw Data
-    ↓
-Feature Engineering
-    ├─ review_length
-    └─ combined_text
-    ↓
-ColumnTransformer
-    ├─ Numerical Processing
-    ├─ Categorical Processing
-    └─ spaCy + TF-IDF
-    ↓
-Logistic Regression
-    ↓
-Prediction
 
+```text
+|Raw Data
+|    ↓
+|Feature Engineering
+|    ├─ review_length
+|    └─ combined_text
+|    ↓
+|ColumnTransformer
+|    ├─ Numerical Processing
+|    ├─ Categorical Processing
+|    └─ spaCy + TF-IDF
+|    ↓
+|Logistic Regression
+|    ↓
+|Prediction
+```
 
 ### Scenario: Fashion Forward Forecasting
 
