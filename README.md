@@ -56,6 +56,26 @@ This project builds a machine learning pipeline to predict whether a customer wo
 
 --------------------
 
+### Pipeline
+
+Raw Data is first preprocessed by the Feature Engineering function to create `combined_text` and `review_length` features. Data is then passed to the ColumnTransformer which preprocess the data by type: numberical features, categorical features and text. it is then passed to the Logistic Regression model to fit and make predictions.
+
+Raw Data
+    ↓
+Feature Engineering
+    ├─ review_length
+    └─ combined_text
+    ↓
+ColumnTransformer
+    ├─ Numerical Processing
+    ├─ Categorical Processing
+    └─ spaCy + TF-IDF
+    ↓
+Logistic Regression
+    ↓
+Prediction
+
+
 ### Scenario: Fashion Forward Forecasting
 
 You've recently joined "StyleSense", a rapidly growing online women's clothing retailer, as a data scientist. StyleSense is known for its trendy and affordable fashion, and its customer base has exploded in recent months. This influx of new customers is fantastic for business, but it has created a challenge: a backlog of product reviews with missing data. Customers are still leaving valuable feedback in the text of their reviews, but they aren't always indicating whether they recommend the product.
